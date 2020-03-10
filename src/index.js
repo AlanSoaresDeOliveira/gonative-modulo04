@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
+import './config/ReactotronConfig';
+import './config/StatusBarConfig';
 
-import { View } from 'react-native';
 
-export default class src extends Component {
-  render() {
-    return <View />;
-  }
-}
+import React from 'react';
+import { Provider } from 'react-redux';
+
+import Routes from './routes';
+
+import store from './store/index';
+
+const App = () => (
+  <Provider store={store}>
+    <Routes />
+  </Provider>
+);
+
+export default App;
